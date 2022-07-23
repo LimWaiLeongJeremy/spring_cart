@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My e-Commerce Store</h1>
+    <form
+        action="#"
+        th:action="@{/cart}"
+        th:object="${cart}"
+        method="post"
+    >
+
+        <input type="text" placeholder="username" th:field="username">
+        <input type="text" placeholder="item" th:field="item">
+        <input type="text" placeholder="price" th:field="price">
+        <input type="submit" value="+" th:field="add">
+
+
+        <br>
+        <h1>Your shopping cart items</h1>
+        <ol start="1">
+            <form>
+                <li>Milo</li> <input type="button" value="Delete" onclick="">
+                                <input type="button" value="Edit" onclick="">
+
+                <li>Apple</li> <input type="button" value="Delete" onclick=""> 
+                                <input type="button" value="Edit" onclick=""> 
+                                <input type="button" value="Up" onclick="">
+
+                <li>Orange</li> <input type="button" value="Delete" onclick=""> 
+                                <input type="button" value="Edit" onclick=""> 
+                                <input type="button" value="Up" onclick="">
+            </form>
+        </ol>
+    </form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body 
+    th:object="${cart}"
+>
+    <h1>My e-Commerce Store</h1>
+    <form
+        action="#"
+        th:action="@{/cart}"
+        th:object="${cart}"
+        method="post"
+    >
+
+        <input type="text" placeholder="username" th:field="*{username}">
+        <br>
+        <input type="text" placeholder="item" th:field="*{item}">
+        <br>
+        <input type="text" placeholder="price" th:field="*{price}">
+        <br>
+        <input type="text" placeholder="quantity" th:field="*{quantity}">
+        <br>
+        <input type="submit" value="Add">
+
+    </form>
+    <h1>
+        <span th:text="*{username}"></span> cart
+    </h1>
+    <br>
+    <h3>Newly added:</h3>
+    <p>
+        Item: <p th:text="*{item}"></p>
+    </p>
+    <br>
+    <p>
+        Price: <p th:text="*{price}"></p>
+    </p>
+    <br>
+    <p>
+        Quantity: <p th:text="*{quantity}"></p>
+    </p>
+    <br>
+    <h3>Item in Cart:</h3>
+    <ul th:each="thingy : cartArray">
+        <li >
+            <p th:text="*{item}"></p><p th:text="*{price}"></p><p th:text="*{quantity}"></p>
+        </li>
+    </ul>
+</body>
+</html>
